@@ -1,0 +1,51 @@
+name: fitflow
+description: "A new Flutter project."
+publish_to: 'none' 
+version: 1.0.0+1
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+dependencies:
+  flutter_social_button: ^1.1.6+1
+  flutter_screenutil: ^5.9.3
+  flutter_localizations:
+    sdk: flutter
+  dots_indicator: ^3.0.0
+  equatable: ^2.0.5
+  flutter_bloc: ^8.1.6
+  flutter_svg: ^1.0.3
+  modal_progress_hud_nsn: ^0.5.1
+  shared_preferences: ^2.2.3
+  svg_flutter: ^0.0.1
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+dev_dependencies:
+  flutter_launcher_icons: "^0.13.1"
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/Logo.png"
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+  fonts:
+    - family: 'Roboto'
+      fonts:
+        - asset: assets/fonts/RobotoSlab-Regular.ttf
+        - asset: assets/fonts/RobotoSlab-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/RobotoSlab-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/RobotoSlab-Bold.ttf
+          weight: 700
+flutter_assets:
+  assets_path: assets/images/
+  output_path: lib/core/utils
+  filename: app_images.dart
+  field_prefix: null
+flutter_intl:
+  enabled: true

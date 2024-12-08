@@ -21,8 +21,8 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: kHorizintalPadding),
+    return Align(
+      alignment: Alignment.center,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -32,7 +32,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
           Text(
             '"Your Fitness Journey Starts Here."',
             style: TextStyles.bold18.copyWith(
-              fontSize: 22,
+              fontSize: 20,
               color: Colors.white,
             ),
           )

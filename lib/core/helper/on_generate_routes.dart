@@ -1,4 +1,6 @@
+import 'package:fitflow/features/auth/forget/forget.dart';
 import 'package:fitflow/features/auth/signin/presention/view/sigin_view.dart';
+import 'package:fitflow/features/auth/signup/presention/view/signup_view.dart';
 import 'package:fitflow/features/onboarding/presention/view/fitness_level.dart';
 import 'package:fitflow/features/onboarding/presention/view/form_fit_flow.dart';
 import 'package:fitflow/features/onboarding/presention/view/goal_selection.dart';
@@ -23,6 +25,10 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const FormFitFlow());
     case ProfileSetupView.routeName:
       return MaterialPageRoute(builder: (_) => const ProfileSetupView());
+    case SignUpView.routeName:
+      return MaterialPageRoute(builder: (_) => const SignUpView());
+    case ForgetPassword.routeName:
+      return MaterialPageRoute(builder: (_) => const ForgetPassword());
     default:
       return MaterialPageRoute(builder: (_) => const SplashView());
   }

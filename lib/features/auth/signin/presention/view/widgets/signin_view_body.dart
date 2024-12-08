@@ -2,7 +2,9 @@ import 'package:fitflow/core/utils/app_colors.dart';
 import 'package:fitflow/core/utils/app_images.dart';
 import 'package:fitflow/core/utils/app_text_style.dart';
 import 'package:fitflow/core/widgets/custom_button_widget.dart';
+import 'package:fitflow/features/auth/forget/forget.dart';
 import 'package:fitflow/features/auth/signin/presention/view/widgets/custom_textformfield.dart';
+import 'package:fitflow/features/auth/signup/presention/view/signup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_social_button/flutter_social_button.dart';
@@ -17,10 +19,10 @@ class SigninViewBody extends StatelessWidget {
         alignment: Alignment.center,
         child: Column(
           children: [
-            Image.asset(Assets.imagesLogo),
+            Image.asset(Assets.imagesLogo, height: 200, width: 200),
             Container(
               width: 330.w,
-              height: 500.h,
+              height: 520.h,
               decoration: BoxDecoration(
                 color: Color(0xffD9D9D9),
                 borderRadius: BorderRadius.circular(20),
@@ -41,7 +43,7 @@ class SigninViewBody extends StatelessWidget {
                     labelStyle: TextStyles.bold18,
                     hintStyle: TextStyles.light16,
                   ),
-                  SizedBox(height: 10.h),
+                  // SizedBox(height: 5.h),
                   CustomTextFieldWithLabel(
                     label: 'Password',
                     hintText: 'Enter your password',
@@ -51,18 +53,24 @@ class SigninViewBody extends StatelessWidget {
                     isPasswordField: true,
                     controller: TextEditingController(),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Align(
-                      alignment: Alignment.topRight,
-                      child: Text('Forgot Password?',
-                          style: TextStyles.light16.copyWith(
-                            color: AppColors.accent,
-                          )),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, ForgetPassword.routeName);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                        alignment: Alignment.topRight,
+                        child: Text('Forgot Password?',
+                            style: TextStyles.light16.copyWith(
+                              color: AppColors.accent,
+                            )),
+                      ),
                     ),
                   ),
-                  SizedBox(height: 10.h),
+                  SizedBox(height: 15.h),
                   CustomButtonSignIn(),
+                  SizedBox(height: 10.h),
                   Text(
                     'Or',
                     style: TextStyles.medium18.copyWith(
@@ -103,7 +111,7 @@ class CustomButtonSignIn extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CustomButtonWidget(
-          width: 130,
+          width: 150,
           height: 70,
           backgroundColor: AppColors.green,
           borderRadius: BorderRadius.circular(10),
@@ -115,7 +123,7 @@ class CustomButtonSignIn extends StatelessWidget {
           onPressed: () {},
         ),
         CustomButtonWidget(
-          width: 130,
+          width: 150,
           height: 70,
           backgroundColor: AppColors.white,
           borderRadius: BorderRadius.circular(10),
@@ -124,7 +132,9 @@ class CustomButtonSignIn extends StatelessWidget {
             fontSize: 20,
             color: Colors.blue,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, SignUpView.routeName);
+          },
         ),
       ],
     );

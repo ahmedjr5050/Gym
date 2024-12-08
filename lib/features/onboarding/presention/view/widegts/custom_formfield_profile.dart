@@ -15,8 +15,8 @@ class CustomFormFieldProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 540.h,
-      width: 360,
+      height: 520.h,
+      width: 340.w,
       decoration: BoxDecoration(
         color: Color(0xffD9D9D9),
         borderRadius: BorderRadius.circular(20),
@@ -35,7 +35,7 @@ class CustomFormFieldProfile extends StatelessWidget {
             CustomTextFormField(
               hint: 'Your Age',
               controller: TextEditingController(),
-              label: 'Age     ',
+              label: 'Age      ',
             ),
             SizedBox(height: 10.h),
             CustomTextFormField(
@@ -49,7 +49,7 @@ class CustomFormFieldProfile extends StatelessWidget {
               hint: 'Your Weight',
               controller: TextEditingController(),
             ),
-            SizedBox(height: 44.h),
+            SizedBox(height: 30.h),
             Align(
               alignment: Alignment.centerLeft,
               child: Text('Gender:',
@@ -80,7 +80,7 @@ class CustomFormFieldProfile extends StatelessWidget {
               labelsOne: 'Yes',
               labelsTwo: 'No',
             ),
-            Spacer(),
+            SizedBox(height: 10.h),
             CustomButtonWidget(
                 backgroundColor: Colors.white,
                 textStyle: TextStyles.bold18.copyWith(color: AppColors.blue),

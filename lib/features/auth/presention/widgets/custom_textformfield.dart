@@ -10,6 +10,8 @@ class CustomTextFieldWithLabel extends StatefulWidget {
   final Widget? suffixIcon;
   final bool isPasswordField;
 final TextInputType? keyboardType;
+  final void Function(String?)? onSaved;
+
   const CustomTextFieldWithLabel({
     Key? key,
     required this.label,
@@ -19,7 +21,7 @@ final TextInputType? keyboardType;
     this.suffixIcon,
     this.controller,
     this.padding = const EdgeInsets.all(13.0),
-    this.isPasswordField = false, this.keyboardType,
+    this.isPasswordField = false, this.keyboardType, this.onSaved,
   }) : super(key: key);
 
   @override
@@ -46,7 +48,14 @@ class _CustomTextFieldWithLabelState extends State<CustomTextFieldWithLabel> {
           ),
           const SizedBox(height: 8.0),
           TextFormField(
+             validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'هذا الحقل مطلوب';
+        }
+        return null;
+      },
             keyboardType: widget.keyboardType,
+            onSaved: widget.onSaved,
             controller: widget.controller,
             obscureText: widget.isPasswordField && !_isPasswordVisible,
             decoration: InputDecoration(

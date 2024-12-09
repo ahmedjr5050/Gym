@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "127643856553",
+    "project_id": "gymfit-65d56",
+    "storage_bucket": "gymfit-65d56.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127643856553:android:01fa7c13b3e73557d003b8",
+        "android_client_info": {
+          "package_name": "com.example.fitflow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMbeB2ao6bl4XD_Gj5dsyvaLQZ6L5e2qA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

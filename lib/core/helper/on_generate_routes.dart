@@ -1,6 +1,6 @@
-import 'package:fitflow/features/auth/forget/forget.dart';
-import 'package:fitflow/features/auth/signin/presention/view/sigin_view.dart';
-import 'package:fitflow/features/auth/signup/presention/view/signup_view.dart';
+import 'package:fitflow/features/auth/presention/forget/forget.dart';
+import 'package:fitflow/features/auth/presention/sigin_view.dart';
+import 'package:fitflow/features/auth/presention/signup_view.dart';
 import 'package:fitflow/features/onboarding/presention/view/fitness_level.dart';
 import 'package:fitflow/features/onboarding/presention/view/form_fit_flow.dart';
 import 'package:fitflow/features/onboarding/presention/view/goal_selection.dart';

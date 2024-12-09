@@ -1,7 +1,7 @@
 import 'package:fitflow/constant.dart';
 import 'package:fitflow/core/services/shared_preferences_singleton.dart';
 import 'package:fitflow/core/utils/app_text_style.dart';
-import 'package:fitflow/features/auth/signin/presention/view/sigin_view.dart';
+import 'package:fitflow/features/auth/presention/sigin_view.dart';
 import 'package:fitflow/features/onboarding/presention/view/onboarding_view.dart';
 import 'package:flutter/material.dart';
 

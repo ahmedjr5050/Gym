@@ -1,7 +1,7 @@
 import 'package:fitflow/core/utils/app_colors.dart';
 import 'package:fitflow/core/utils/app_text_style.dart';
 import 'package:fitflow/core/widgets/custom_button_widget.dart';
-import 'package:fitflow/features/auth/signin/presention/view/sigin_view.dart';
+import 'package:fitflow/features/auth/presention/sigin_view.dart';
 import 'package:fitflow/features/onboarding/presention/view/goal_selection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

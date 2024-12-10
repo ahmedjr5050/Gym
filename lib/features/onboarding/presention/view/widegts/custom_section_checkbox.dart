@@ -1,15 +1,16 @@
-
 import 'package:fitflow/features/onboarding/presention/view/widegts/custom_checkbox.dart';
 import 'package:flutter/material.dart';
 
 class CustomSectionCheckbox extends StatefulWidget {
   final String labelsOne;
   final String labelsTwo;
+  final ValueChanged<String> onChanged; // Add callback
 
   const CustomSectionCheckbox({
     Key? key,
     required this.labelsOne,
     required this.labelsTwo,
+    required this.onChanged,
   }) : super(key: key);
 
   @override
@@ -23,6 +24,7 @@ class _CustomSectionCheckboxState extends State<CustomSectionCheckbox> {
     setState(() {
       selectedLabel = label;
     });
+    widget.onChanged(label); // Pass value to parent
   }
 
   @override

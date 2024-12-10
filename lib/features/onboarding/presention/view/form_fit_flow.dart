@@ -16,7 +16,7 @@ class FormFitFlow extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset(Assets.imagesLogo, height: 200, width: 200),
+              Image.asset(Assets.imagesLogo, height: 150, width: 150),
               CustomFormFieldProfile(),
             ],
           ),

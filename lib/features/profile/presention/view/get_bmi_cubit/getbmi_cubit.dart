@@ -12,7 +12,7 @@ class FitnessDataCubit extends Cubit<FitnessDataState> {
   Future<void> loadFitnessData({
     required String gender,
     required int age,
-    required String height,
+    required double height,
     required String weight,
     required String hypertension,
     required String diabetic,

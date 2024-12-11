@@ -12,12 +12,12 @@ class FitnessDataRepositoryImpl implements FitnessDataRepository {
   Future<FitnessData> fetchFitnessData({
     required String gender,
     required int age,
-    required String height,
+    required double height,
     required String weight,
     required String hypertension,
     required String diabetic,
   }) async {
-const url = 'http://10.0.2.2:8000/predict/'; // استخدم 10.0.2.2 بدلاً من 127.0.0.1
+const url = 'http://192.168.1.23:8000/predict/'; // استخدم 10.0.2.2 بدلاً من 127.0.0.1
 
     try {
       // Constructing the request payload

@@ -27,7 +27,7 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
   String? diabetic; // For storing diabetic selection
   int? _age;
   String? _weight;
-  String? _height;
+  double? _height;
 
   // Validators
   String? _validateAge(String? value) {
@@ -39,8 +39,8 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
   }
 
   String? _validateHeight(String? value) {
-    final height = int.tryParse(value ?? '');
-    if (height == null || height < 50 || height > 250) {
+    final height = double.tryParse(value ?? '');
+    if (height == null || height < 1.50 || height > 2.50) {
       return 'Please enter a valid height between 50 and 250 cm.';
     }
     return null;
@@ -88,7 +88,7 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
               SizedBox(height: 20.h),
               CustomTextFormField(
                 hint: 'Your Height',
-                onSaved: (value) => _height = value!,
+                onSaved: (value) => _height = double.tryParse(value ?? ''),
                 validator: _validateHeight, // إضافة التحقق من الطول
                 label: 'Height ',
                 keyboardType: TextInputType.number,
@@ -165,6 +165,11 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
                         MaterialPageRoute(
                             builder: (_) => ProfileSetupView(
                                   gender: gender,
+                                  age: _age,
+                                  height: _height,
+                                  weight: _weight,
+                                  diabetic: diabetic,
+                                  hypertension: hypertension,
                                 )));
 
                     print({

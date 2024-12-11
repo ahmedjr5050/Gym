@@ -1,6 +1,6 @@
 import 'package:fitflow/core/utils/app_images.dart';
 import 'package:fitflow/core/utils/app_text_style.dart';
-import 'package:fitflow/features/onboarding/presention/view/form_fit_flow.dart';
+import 'package:fitflow/features/profile/presention/view/form_fit_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:fitflow/core/utils/app_colors.dart';
 import 'package:fitflow/core/widgets/custom_button_widget.dart';

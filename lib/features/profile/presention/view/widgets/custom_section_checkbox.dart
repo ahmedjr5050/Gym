@@ -1,4 +1,4 @@
-import 'package:fitflow/features/onboarding/presention/view/widegts/custom_checkbox.dart';
+import 'package:fitflow/features/profile/presention/view/widgets/custom_checkbox.dart';
 import 'package:flutter/material.dart';
 
 class CustomSectionCheckbox extends StatefulWidget {

@@ -1,4 +1,3 @@
-
 import 'package:bloc/bloc.dart';
 import 'package:fitflow/core/helper/custom_bloc_observer.dart';
 import 'package:fitflow/core/helper/on_generate_routes.dart';

@@ -1,11 +1,11 @@
+import 'package:fitflow/core/profilearg.dart';
 import 'package:fitflow/core/utils/app_colors.dart';
 import 'package:fitflow/core/utils/app_text_style.dart';
 import 'package:fitflow/core/widgets/custom_button_widget.dart';
-import 'package:fitflow/features/onboarding/presention/view/profile_setup_view.dart';
+import 'package:fitflow/features/profile/presention/view/profile_setup_view.dart';
 import 'package:fitflow/features/onboarding/presention/view/widegts/custom_form_field.dart';
-import 'package:fitflow/features/onboarding/presention/view/widegts/custom_section_checkbox.dart';
+import 'package:fitflow/features/profile/presention/view/widgets/custom_section_checkbox.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // لإضافة TextInputFormatter
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomFormFieldProfile extends StatefulWidget {
@@ -160,18 +160,26 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
                 onPressed: () {
                   if (_formKey.currentState?.validate() ?? false) {
                     _formKey.currentState?.save(); // Save the form fields
-                    print('Age: $_age');
-                    print('Height: $_height');
-                    print('Weight: $_weight');
-                    print('Gender: $gender');
-                    print('Hypertension: $hypertension');
-                    print('Diabetic: $diabetic');
-                    Navigator.pushNamed(context, ProfileSetupView.routeName);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => ProfileSetupView(
+                                  gender: gender,
+                                )));
+
+                    print({
+                      'gender': gender,
+                      'hypertension': hypertension,
+                      'diabetic': diabetic,
+                      'age': _age,
+                      'weight': _weight,
+                      'height': _height,
+                    });
                   } else {
                     print("Form is not valid!");
                   }
                 },
-              ),
+              )
             ],
           ),
         ),

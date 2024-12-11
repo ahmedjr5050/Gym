@@ -6,7 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileSetupBody extends StatelessWidget {
-  const ProfileSetupBody({super.key});
+  // Accept dynamic data
+  final double bmi;
+
+  const ProfileSetupBody({
+    super.key,
+    required this.bmi,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,19 +41,19 @@ class ProfileSetupBody extends StatelessWidget {
                       style: TextStyles.bold18,
                     ),
                     TextSpan(
-                      text: '21 ',
+                      text: '$bmi', // Display dynamic BMI value
                       style: TextStyles.bold18.copyWith(
                         fontSize: 24,
                       ),
                     ),
                     TextSpan(
-                      text: 'and This Is\n \n',
+                      text: ' and This Is\n \n',
                       style: TextStyles.bold18,
                     ),
-                    TextSpan(
-                      text: '             very Good',
-                      style: TextStyles.bold18,
-                    ),
+                    // TextSpan(
+                    //   text: '             $bmiMessage',  // Display dynamic BMI message
+                    //   style: TextStyles.bold18,
+                    // ),
                   ],
                 )),
                 SizedBox(height: 30.h),

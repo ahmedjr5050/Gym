@@ -2,6 +2,7 @@ import 'package:fitflow/core/services/getit_services.dart';
 import 'package:fitflow/features/profile/domain/repo/fitness_data_repository.dart';
 import 'package:fitflow/features/profile/presention/view/get_bmi_cubit/getbmi_cubit.dart';
 import 'package:fitflow/features/profile/presention/view/get_bmi_cubit/getbmi_state.dart';
+import 'package:fitflow/features/profile/presention/view/widgets/profile_bmi_loaded_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -44,7 +45,6 @@ class ProfileSetupView extends StatelessWidget {
             final cubit = context.read<FitnessDataCubit>();
 
             if (state is FitnessDataInitial) {
-              // Automatically trigger the cubit to load data when the page is built
               WidgetsBinding.instance.addPostFrameCallback((_) {
                 cubit.loadFitnessData(
                   gender: gender ?? 'male',
@@ -57,17 +57,14 @@ class ProfileSetupView extends StatelessWidget {
               });
             }
 
-            return Scaffold(
-              appBar: AppBar(title: const Text("Profile Setup")),
-              body: Center(
-                child: state is FitnessDataLoading
-                    ? const CircularProgressIndicator()
-                    : state is FitnessDataLoaded
-                        ? Text('Fitness Data Loaded: ${state.fitnessData.bmi}')
-                        : Text(
-                            'Gender: ${gender}',
-                          ),
-              ),
+            if (state is FitnessDataLoaded) {
+              return ProfileBmiLoadedView(fitnessData: state.fitnessData);
+            }
+
+            return Center(
+              child: state is FitnessDataLoading
+                  ? const CircularProgressIndicator()
+                  : const Text('Loading Profile Data...'),
             );
           },
         ),

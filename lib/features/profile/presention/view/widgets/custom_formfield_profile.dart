@@ -1,4 +1,3 @@
-import 'package:fitflow/core/profilearg.dart';
 import 'package:fitflow/core/utils/app_colors.dart';
 import 'package:fitflow/core/utils/app_text_style.dart';
 import 'package:fitflow/core/widgets/custom_button_widget.dart';
@@ -16,15 +15,13 @@ class CustomFormFieldProfile extends StatefulWidget {
   @override
   State<CustomFormFieldProfile> createState() => _CustomFormFieldProfileState();
 }
-
-// Variables to store profile details
 class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
-  final _formKey = GlobalKey<FormState>(); // Form key to manage the form state
+  final _formKey = GlobalKey<FormState>(); 
   AutovalidateMode _formAutovalidateMode = AutovalidateMode.disabled;
 
-  String? gender; // For storing gender selection
-  String? hypertension; // For storing hypertension selection
-  String? diabetic; // For storing diabetic selection
+  String? gender;
+  String? hypertension; 
+  String? diabetic;
   int? _age;
   String? _weight;
   double? _height;
@@ -80,16 +77,16 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
               CustomTextFormField(
                 hint: 'Your Age',
                 onSaved: (value) =>
-                    _age = int.tryParse(value ?? ''), // استخدام int.tryParse
+                    _age = int.tryParse(value ?? ''), 
                 validator: _validateAge,
                 label: 'Age     ',
-                keyboardType: TextInputType.number, // لضمان إدخال الأرقام فقط
+                keyboardType: TextInputType.number,
               ),
               SizedBox(height: 20.h),
               CustomTextFormField(
                 hint: 'Your Height',
                 onSaved: (value) => _height = double.tryParse(value ?? ''),
-                validator: _validateHeight, // إضافة التحقق من الطول
+                validator: _validateHeight,
                 label: 'Height ',
                 keyboardType: TextInputType.number,
               ),
@@ -98,7 +95,7 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
                 label: 'Weight ',
                 hint: 'Your Weight',
                 onSaved: (value) => _weight = value!,
-                validator: _validateWeight, // إضافة التحقق من الوزن
+                validator: _validateWeight,
                 keyboardType: TextInputType.number,
               ),
               SizedBox(height: 30.h),
@@ -127,7 +124,6 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
               CustomSectionCheckbox(
                 labelsOne: 'Yes',
                 labelsTwo: 'No',
-                // Save hypertension selection
                 onChanged: (value) {
                   setState(() {
                     hypertension = value;
@@ -143,7 +139,6 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
               CustomSectionCheckbox(
                 labelsOne: 'Yes',
                 labelsTwo: 'No',
-                // Save diabetic selection
                 onChanged: (value) {
                   setState(() {
                     diabetic = value;
@@ -159,18 +154,20 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
                 text: 'Next',
                 onPressed: () {
                   if (_formKey.currentState?.validate() ?? false) {
-                    _formKey.currentState?.save(); // Save the form fields
+                    _formKey.currentState?.save(); 
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => ProfileSetupView(
-                                  gender: gender,
-                                  age: _age,
-                                  height: _height,
-                                  weight: _weight,
-                                  diabetic: diabetic,
-                                  hypertension: hypertension,
-                                )));
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ProfileSetupView(
+                          gender: gender,
+                          age: _age,
+                          height: _height,
+                          weight: _weight,
+                          diabetic: diabetic,
+                          hypertension: hypertension,
+                        ),
+                      ),
+                    );
 
                     print({
                       'gender': gender,

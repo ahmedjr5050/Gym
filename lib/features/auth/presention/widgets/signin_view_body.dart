@@ -96,6 +96,7 @@ class SigninViewBody extends StatelessWidget {
                       onTap: () {
                         print('google');
                         context.read<SignInCubit>().signInWithGoogle();
+                        // Navigator.pushNamed(context, NewsScreenView.routeName);
                       },
                       titleStyle: TextStyles.bold18.copyWith(
                         color: Colors.white,
@@ -152,6 +153,8 @@ class _CustomButtonSignInState extends State<CustomButtonSignIn> {
               context
                   .read<SignInCubit>()
                   .signInWithEmailAndPassword(_email, _password);
+
+              
             } else {
               setState(() {
                 _formAutovalidateMode = AutovalidateMode.always;

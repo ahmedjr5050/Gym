@@ -17,8 +17,9 @@ class FitnessDataRepositoryImpl implements FitnessDataRepository {
     required String hypertension,
     required String diabetic,
   }) async {
-const url = 'http://192.168.1.23:8000/predict/'; // استخدم 10.0.2.2 بدلاً من 127.0.0.1
-
+    const url =
+        'http://10.0.2.2:8000/predict/'; // worker
+// http://192.168.1.23:8000/predict/
     try {
       // Constructing the request payload
       final requestData = {
@@ -38,7 +39,8 @@ const url = 'http://192.168.1.23:8000/predict/'; // استخدم 10.0.2.2 بدل
         final fitnessDataModel = FitnessDataModel.fromJson(jsonData);
         return fitnessDataModel.toEntity();
       } else {
-        throw Exception('Failed to fetch fitness data. Status code: ${response.statusCode}');
+        throw Exception(
+            'Failed to fetch fitness data. Status code: ${response.statusCode}');
       }
     } catch (e) {
       throw Exception('Error occurred while fetching fitness data: $e');

@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 Route<dynamic> onGenerateRoutes(RouteSettings settings) {
   switch (settings.name) {
+    case NewsScreenView.routeName:
+      return MaterialPageRoute(builder: (_) => const NewsScreenView());
     case SplashView.routeName:
       return MaterialPageRoute(builder: (_) => const SplashView());
     case SignInView.routeName:
@@ -23,13 +25,12 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const FitnessLevel());
     case FormFitFlow.routeName:
       return MaterialPageRoute(builder: (_) => const FormFitFlow());
-   
+
     case SignUpView.routeName:
       return MaterialPageRoute(builder: (_) => const SignUpView());
     case ForgetPassword.routeName:
       return MaterialPageRoute(builder: (_) => const ForgetPassword());
-    case NewsScreenView.routeName:
-      return MaterialPageRoute(builder: (_) => const NewsScreenView());
+
     default:
       return MaterialPageRoute(builder: (_) => const SplashView());
   }

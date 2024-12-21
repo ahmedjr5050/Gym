@@ -6,6 +6,10 @@ class Assets {
   /// assets/images/advanced.png
   static const String imagesAdvanced = "assets/images/advanced.png";
 
+  /// Assets for imagesBarPlaneScreen
+  /// assets/images/bar_plane_screen.png
+  static const String imagesBarPlaneScreen = "assets/images/bar_plane_screen.png";
+
   /// Assets for imagesBeginner
   /// assets/images/beginner.png
   static const String imagesBeginner = "assets/images/beginner.png";
@@ -21,6 +25,10 @@ class Assets {
   /// Assets for imagesFitFlowlogo
   /// assets/images/FitFlowlogo.png
   static const String imagesFitFlowlogo = "assets/images/FitFlowlogo.png";
+
+  /// Assets for imagesFood
+  /// assets/images/food.png
+  static const String imagesFood = "assets/images/food.png";
 
   /// Assets for imagesGeneralHealthicon
   /// assets/images/GeneralHealthicon.png
@@ -57,6 +65,10 @@ class Assets {
   /// Assets for imagesNotificationblue
   /// assets/images/notificationblue.png
   static const String imagesNotificationblue = "assets/images/notificationblue.png";
+
+  /// Assets for imagesPower
+  /// assets/images/power.png
+  static const String imagesPower = "assets/images/power.png";
 
   /// Assets for imagesProfile
   /// assets/images/profile.png

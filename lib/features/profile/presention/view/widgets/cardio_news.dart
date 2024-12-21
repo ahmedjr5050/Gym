@@ -1,11 +1,15 @@
-import 'package:fitflow/core/utils/app_colors.dart';
-import 'package:fitflow/core/utils/app_images.dart';
-import 'package:fitflow/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
 
-class CardioNews extends StatelessWidget {
-  const CardioNews({
+class CardioNewsWidget extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final String imagePath;
+
+  const CardioNewsWidget({
     super.key,
+    required this.title,
+    required this.subtitle,
+    required this.imagePath,
   });
 
   @override
@@ -17,62 +21,70 @@ class CardioNews extends StatelessWidget {
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: Color(0xFF007AFF)),
+          side: BorderSide(width: 1, color: const Color(0xFF007AFF)),
           borderRadius: BorderRadius.circular(10),
         ),
-        shadows: [
+        shadows: const [
           BoxShadow(
             color: Color(0x3F000000),
             blurRadius: 4,
             offset: Offset(0, 4),
-            spreadRadius: 0,
-          )
+          ),
         ],
       ),
-      child: Align(
-        alignment: Alignment.center,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(Assets.imagesRun),
-            SizedBox(
-              height: 18,
-            ),
-            Text.rich(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // Image
+          Image.asset(imagePath),
+          const SizedBox(height: 18),
+          // Title and Subtitle
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text.rich(
               TextSpan(
                 children: [
                   TextSpan(
-                    text: '5 Tips to Improve Your Cardio  Performance\n',
-                    style: TextStyles.bold16,
+                    text: '$title\n',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.black,
+                    ),
                   ),
-                  TextSpan(text: '\n'),
+                  const TextSpan(text: '\n'),
                   TextSpan(
-                    text: 'Discover how to increase endurance and enhance\n',
+                    text: subtitle,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: Colors.black54,
+                    ),
                   ),
-                  TextSpan(text: 'your cardio workouts with these simple tips'),
                 ],
               ),
+              textAlign: TextAlign.center,
             ),
-            SizedBox(
-              height: 17,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Read More',
-                  style: TextStyles.regular14.copyWith(
-                    color: AppColors.blue,
-                  ),
+          ),
+          const SizedBox(height: 10),
+          // Read More Button
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Read More',
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal,
+                  color: Color(0xFF007AFF),
                 ),
-                Icon(
-                  Icons.arrow_forward,
-                  color: Colors.blue,
-                ),
-              ],
-            )
-          ],
-        ),
+              ),
+              const Icon(
+                Icons.arrow_forward,
+                color: Color(0xFF007AFF),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

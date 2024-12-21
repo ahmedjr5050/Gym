@@ -5,9 +5,10 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String imagePath;
   final String titleText;
-
+final double size;
   const CustomAppBar({
     super.key,
+    this.size = 32,
     required this.imagePath,
     required this.titleText,
   });
@@ -33,6 +34,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             titleText,
             style: TextStyles.bold32.copyWith(
               color: AppColors.white,
+              fontSize: size,
             ),
           ),
         ],

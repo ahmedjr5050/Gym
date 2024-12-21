@@ -15,7 +15,7 @@ class ProfileScreen extends StatelessWidget {
               height: 20,
             ),
             CustomListview(
-              imageyurl: Assets.imagesProfile,
+              imageyurl: Assets.imagesProfileblue,
               text: 'User Profile',
             ),
             SizedBox(
@@ -91,7 +91,7 @@ class CustomListview extends StatelessWidget {
             height: 32,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(Assets.imagesProfileblue),
+                image: AssetImage(imageyurl),
                 fit: BoxFit.fill,
               ),
             ),
@@ -101,7 +101,7 @@ class CustomListview extends StatelessWidget {
             text,
             style: TextStyle(
               color: Color(0xFF007AFF),
-              fontSize: 24,
+              fontSize: 20,
               fontFamily: 'Roboto Slab',
               fontWeight: FontWeight.w700,
               height: 0,

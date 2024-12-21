@@ -6,6 +6,7 @@ import 'package:fitflow/features/profile/presention/view/form_fit_flow.dart';
 import 'package:fitflow/features/onboarding/presention/view/goal_selection.dart';
 import 'package:fitflow/features/onboarding/presention/view/onboarding_view.dart';
 import 'package:fitflow/features/profile/presention/view/news_screen-view.dart';
+import 'package:fitflow/features/profile/presention/view/palne_screen_view.dart';
 import 'package:fitflow/features/spalsh/splash_view.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,8 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const SignUpView());
     case ForgetPassword.routeName:
       return MaterialPageRoute(builder: (_) => const ForgetPassword());
-
+    case PlaneScreen.routeName:
+      return MaterialPageRoute(builder: (_) => const PlaneScreen());
     default:
       return MaterialPageRoute(builder: (_) => const SplashView());
   }

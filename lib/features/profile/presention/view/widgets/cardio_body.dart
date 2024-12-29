@@ -43,9 +43,7 @@ class CardioExercises extends StatelessWidget {
 
               return Column(
                 children: [
-                  Text(
-                      vegetables), // This will display vegetables without the square brackets
-
+                  containerData(fitnessData: fitnessData)
                   // Other UI elements here...
                 ],
               );

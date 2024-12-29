@@ -69,7 +69,12 @@ class ProfileBmiLoadedView extends StatelessWidget {
                     backgroundColor: AppColors.green,
                     borderRadius: BorderRadius.circular(10),
                     onPressed: () {
-                      Navigator.pushNamed(context, NewsScreenView.routeName);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NewsScreenView(
+                                    fitnessData: fitnessData,
+                                  )));
                     },
                   ),
                 ],

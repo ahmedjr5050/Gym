@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitflow/core/errors/exception.dart';
 import 'package:fitflow/core/errors/failures.dart';
 import 'package:fitflow/core/services/data_service.dart';
@@ -60,19 +61,33 @@ class AuthRepoImpl extends AuthRepo {
     }
   }
 
-  Future<Either<Failure, UserEntity>> signInWithGoogle() async {
+  Future<void> deleteUser(User? user) async {
+    if (user != null) {
+      await firebaseAuthServices.deleteUser();
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signinWithGoogle() async {
+    User? user;
     try {
-      var user = await firebaseAuthServices.signInWithGoogle();
-      return right(
-        UserModel.fromFirebaseUser(user),
-      );
+      user = await firebaseAuthServices.signInWithGoogle();
+
+      var userEntity = UserModel.fromFirebaseUser(user);
+      var isUserExist = await databaseService.checkIfDataExists(
+          path: BackendEndpoint.isUserExists, docuementId: user.uid);
+
+      await addUserData(user: userEntity);
+
+      return right(userEntity);
     } catch (e) {
+      await deleteUser(user);
       log(
-        'Exception in AuthRepoImp signInWithGoogle : $e.toString()',
+        'Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}',
       );
       return left(
         ServerFailure(
-          'حدث خطأ ما يرجى المحاولة مرة أخرى',
+          'حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
         ),
       );
     }
@@ -99,5 +114,23 @@ class AuthRepoImpl extends AuthRepo {
       return left(ServerFailure(errorMessage));
     }
     return right(null);
+  }
+
+  // Future<UserEntity> getUserData({required String uid}) async {
+  //   var userData = await databaseService.getData(
+  //       path: BackendEndpoint.getUsersData, docuementId: uid);
+  //   return UserModel.fromJson(userData);
+  // }
+
+  @override
+  Future<void> logout() async {
+    try {
+      await firebaseAuthServices.logout();
+      log('User logged out successfully');
+    } catch (e) {
+      log('Exception in AuthRepoImpl.logout: $e');
+      throw CustomException(
+          message: 'حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى');
+    }
   }
 }

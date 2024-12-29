@@ -1,6 +1,6 @@
 import 'package:fitflow/core/utils/app_images.dart';
 import 'package:fitflow/features/profile/presention/view/widgets/customappbar.dart';
-import 'package:fitflow/features/profile/presention/view/widgets/plane_screen_view_body.dart';
+import 'package:fitflow/features/profile/presention/view/plane/widgets/plane_screen_view_body.dart';
 import 'package:flutter/material.dart';
 
 class PlaneScreen extends StatelessWidget {
@@ -14,7 +14,7 @@ class PlaneScreen extends StatelessWidget {
           imagePath: Assets.imagesFitFlowlogo,
           titleText: 'Your Plane',
           size: 28),
-      body: PlaneScreeenViewBody(),
+      body: PlaneScreenViewBody(),
     );
   }
 }

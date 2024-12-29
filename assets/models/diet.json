@@ -1,0 +1,134 @@
+{
+    "diets": {
+      "0": {
+        "vegetables": ["Broccoli", "Carrots", "Spinach", "Lettuce", "Onion"],
+        "protein_intake": ["Cheese", "Cottage cheese", "Skim Milk", "Low-fat Milk", "Baru Nuts"],
+        "juices": ["Fruit Juice", "Aloe vera juice", "Cold-pressed juice", "Watermelon juice"]
+      },
+      "1": {
+        "vegetables": ["Carrots", "Sweet Potato", "Lettuce"],
+        "protein_intake": ["Red meats", "poultry", "fish", "eggs", "dairy products", "legumes", "nuts"],
+        "juices": ["Fruit juice", "watermelon juice", "carrot juice", "apple juice", "mango juice"]
+      },
+      "2": {
+        "vegetables": ["Carrots", "Sweet Potato", "Lettuce"],
+        "protein_intake": ["Red meats", "poultry", "fish", "eggs", "dairy products", "legumes", "nuts"],
+        "juices": ["Fruit juice", "watermelon juice", "carrot juice", "apple juice", "mango juice"]
+      },
+      "3": {
+        "vegetables": ["Garlic", "Mushroom", "Green Papper", "Iceberg Lettuce"],
+        "protein_intake": ["Baru Nuts", "Beech Nuts", "Hemp Seeds", "Cheese Sandwich"],
+        "juices": ["Apple Juice", "Mango juice", "Beetroot juice"]
+      },
+      "4": {
+        "vegetables": ["Garlic", "Roma Tomatoes", "Capers", "Iceberg Lettuce"],
+        "protein_intake": ["Cheese Sandwich", "Baru Nuts", "Beech Nuts", "Squash Seeds", "Mixed Teff"],
+        "juices": ["Apple juice", "beetroot juice", "mango juice"]
+      },
+      "5": {
+        "vegetables": ["Garlic", "Roma Tomatoes", "Capers", "Green Papper", "Iceberg Lettuce"],
+        "protein_intake": ["Cheese Sandwich", "Baru Nuts", "Beech Nuts", "Squash Seeds", "Mixed Teff", "peanut butter", "jelly sandwich"],
+        "juices": ["Apple juice", "beetroot juice", "mango juice"]
+      },
+      "6": {
+        "vegetables": ["Garlic", "Mushroom", "Green Papper", "Water Chestnut"],
+        "protein_intake": ["Baru Nuts", "Beech Nuts", "Black Walnut"],
+        "juices": ["Apple juice", "Mango", "Beetroot Juice"]
+      },
+      "7": {
+        "vegetables": ["Garlic", "Mushroom", "Green Papper"],
+        "protein_intake": ["Baru Nuts", "Beech Nuts", "Hemp Seeds"],
+        "juices": ["Apple juice", "Mango", "Beetroot Juice"]
+      },
+      "8": {
+        "vegetables": ["Mixed greens", "cherry tomatoes", "cucumbers", "bell peppers", "carrots", "celery"],
+        "protein_intake": ["Chicken", "fish", "tofu", "legumes"],
+        "juices": ["Green juice", "kale", "spinach", "cucumber", "celery", "apple"]
+      },
+      "9": {
+        "vegetables": ["Tomatoes", "Garlic", "leafy greens", "broccoli", "carrots", "bell peppers"],
+        "protein_intake": ["Poultry", "fish", "tofu", "legumes", "low-fat dairy products"],
+        "juices": ["Apple juice", "beetroot juice", "mango juice"]
+      }
+    },
+    "exercises": {
+      "0": "Brisk walking, cycling, swimming, running, or dancing.",
+      "1": "Squats, deadlifts, bench presses, and overhead presses.",
+      "2": "Squats, yoga, deadlifts, bench presses, and overhead presses.",
+      "3": "Walking, Yoga, Swimming.",
+      "4": "Brisk walking, cycling, swimming, or dancing."
+    },
+    "cardio": {
+      "0": [
+        "Brisk walking for 30 minutes",
+        "Cycling at a moderate pace for 20 minutes",
+        "Swimming laps for 15-20 minutes",
+        "Dancing to your favorite music for 20 minutes",
+        "Jogging in the park for 20 minutes"
+      ],
+      "1": [
+        "Stair climbing for 15 minutes",
+        "Jump rope intervals for 10-15 minutes",
+        "Brisk walking combined with light jogging for 30 minutes",
+        "Cycling on a flat trail for 25 minutes",
+        "Low-intensity aerobics for 20 minutes"
+      ],
+      "2": [
+        "Light jogging for 25 minutes",
+        "Swimming in a pool or open water for 20 minutes",
+        "Fast-paced walking in a hilly area for 30 minutes",
+        "Stationary biking for 20 minutes",
+        "Cardio yoga flow focusing on movement and breathing for 15 minutes"
+      ],
+      "3": [
+        "Walking at a steady pace for 30 minutes",
+        "Gentle swimming for 20 minutes",
+        "Slow-paced cycling for 25 minutes",
+        "Basic dance movements for 15 minutes",
+        "Active yoga with dynamic poses for 20 minutes"
+      ],
+      "4": [
+        "Brisk walking with intervals of fast-paced strides for 30 minutes",
+        "Cycling in a scenic location for 25 minutes",
+        "Low-impact Zumba session for 20 minutes",
+        "Rowing machine workout for 15 minutes",
+        "Walking while holding light dumbbells for 20 minutes"
+      ],
+      "5": [
+        "Running on a treadmill or outdoors for 20 minutes",
+        "Swimming focusing on endurance for 25 minutes",
+        "Moderate cycling combined with uphill climbs for 30 minutes",
+        "High-intensity interval training (HIIT) with jumping jacks and burpees for 15 minutes",
+        "Fast-paced aerobics session for 20 minutes"
+      ],
+      "6": [
+        "Walking while carrying a weighted backpack for 20 minutes",
+        "Water aerobics or light swimming for 25 minutes",
+        "Cycling on a challenging trail for 30 minutes",
+        "Hiking in a natural setting for 30 minutes",
+        "Jumping rope for 10-15 minutes"
+      ],
+      "7": [
+        "Running sprints followed by light jogging for 20 minutes",
+        "Aerobic dance workout for 25 minutes",
+        "Cycling intervals of fast and slow speeds for 20 minutes",
+        "Boxing-style cardio workout for 15 minutes",
+        "Power walking for 30 minutes"
+      ],
+      "8": [
+        "Jogging around your neighborhood for 30 minutes",
+        "Climbing stairs or using a step machine for 20 minutes",
+        "Cycling outdoors or using a stationary bike for 25 minutes",
+        "Swimming laps at a moderate pace for 20 minutes",
+        "Rowing machine workout for 15 minutes"
+      ],
+      "9": [
+        "Brisk walking for 30 minutes",
+        "Running intervals with short sprints for 20 minutes",
+        "Cycling through different terrains for 25 minutes",
+        "Swimming in open water for 15-20 minutes",
+        "Dance cardio session for 20 minutes"
+      ]
+    }
+  }
+  

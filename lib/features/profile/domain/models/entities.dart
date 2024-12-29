@@ -3,8 +3,8 @@ class FitnessData {
   final String predictedLevel;
   final String predictedGoal;
   final String predictedType;
-  final String predictedDiet;
-  final String predictedExercise;
+  final int predictedDiet;
+  final int predictedExercise;
 
   FitnessData({
     required this.bmi,

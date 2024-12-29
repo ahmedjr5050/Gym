@@ -1,6 +1,4 @@
-import 'package:fitflow/constant.dart';
 import 'package:fitflow/core/helper/build_error_bar.dart';
-import 'package:fitflow/core/services/shared_preferences_singleton.dart';
 import 'package:fitflow/core/widgets/custom_progress_hub.dart';
 import 'package:fitflow/features/auth/presention/cubits/sign_in_cubit/sign_in_cubit.dart';
 import 'package:fitflow/features/auth/presention/widgets/signin_view_body.dart';
@@ -20,7 +18,6 @@ class SignInBlocConsumer extends StatefulWidget {
 class _SignInBlocConsumerState extends State<SignInBlocConsumer> {
   @override
   void initState() {
-    ecute(context);
     super.initState();
   }
 
@@ -29,7 +26,6 @@ class _SignInBlocConsumerState extends State<SignInBlocConsumer> {
     return BlocConsumer<SignInCubit, SignInState>(
       listener: (context, state) {
         if (state is SignInSuccess) {
-          Prefs.setBool(kIslogin, true);
           Navigator.pushNamedAndRemoveUntil(
               context, NewsScreenView.routeName, (route) => false);
         }
@@ -44,16 +40,5 @@ class _SignInBlocConsumerState extends State<SignInBlocConsumer> {
         );
       },
     );
-  }
-
-  void ecute(BuildContext context) {
-    bool islogin = Prefs.getBool(kIslogin);
-    Future.delayed(const Duration(seconds: 3), () {
-      if (islogin) {
-        Navigator.pushReplacementNamed(context, NewsScreenView.routeName);
-      } else {
-        return;
-      }
-    });
   }
 }

@@ -5,9 +5,8 @@ abstract class FitnessDataRepository {
     required String gender,
     required int age,
     required double height,
-    required String weight,
-     required String diabetic,
+    required int weight,
+    required String diabetic,
     required String hypertension,
-   
   });
 }

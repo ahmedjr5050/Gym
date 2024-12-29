@@ -9,6 +9,7 @@ abstract class AppColors {
   static const Color darkGrey = Color(0xFF666666); // 666666
   static const Color blue = Color(0xFF007AFF); // 007AFF
   static const Color green = Color(0xFF34C759); // 34C759
+  static const Color greencard = Color(0xFF34C759); // FF3B30
   static const Color scaffoldBackground = Color(0xFF1E1E1E); // 1E1E1E
   static const Color accent = Color(0xFF333333); // 333333
 }

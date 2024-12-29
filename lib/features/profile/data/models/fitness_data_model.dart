@@ -5,8 +5,8 @@ class FitnessDataModel {
   final String predictedLevel;
   final String predictedGoal;
   final String predictedType;
-  final String predictedDiet;
-  final String predictedExercise;
+  final int predictedDiet;
+  final int predictedExercise;
 
   FitnessDataModel({
     required this.bmi,
@@ -24,8 +24,8 @@ class FitnessDataModel {
       predictedLevel: json['Predicted Level'] as String,
       predictedGoal: json['Predicted Goal'] as String,
       predictedType: json['Predicted Type'] as String,
-      predictedDiet: json['Predicted Diet'] as String,
-      predictedExercise: json['Predicted Exercise'] as String,
+      predictedDiet: json['Predicted Diet'] as int,
+      predictedExercise: json['Predicted Exercise'] as int,
     );
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 abstract class TextStyles {
   static const TextStyle semiBold14 = TextStyle(
@@ -8,10 +9,10 @@ abstract class TextStyles {
     height: 56 / 14,
   );
 
-  static const TextStyle bold32 = TextStyle(
+  static TextStyle bold32 = TextStyle(
     fontFamily: 'Roboto',
     fontWeight: FontWeight.bold,
-    fontSize: 32,
+    fontSize: 32.sp,
     height: 45 / 32,
   );
 

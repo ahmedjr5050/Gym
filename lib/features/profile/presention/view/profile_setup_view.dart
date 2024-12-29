@@ -13,7 +13,7 @@ class ProfileSetupView extends StatelessWidget {
   final String? hypertension;
   final String? diabetic;
   final int? age;
-  final String? weight;
+  final int? weight;
   final double? height;
 
   const ProfileSetupView({
@@ -50,22 +50,20 @@ class ProfileSetupView extends StatelessWidget {
                   gender: gender ?? 'male',
                   age: age ?? 25,
                   height: height ?? 1.50,
-                  weight: weight ?? '50',
+                  weight: weight ?? 50,
                   diabetic: diabetic ?? 'no',
                   hypertension: hypertension ?? 'no',
                 );
               });
-            }
-
-            if (state is FitnessDataLoaded) {
+            } else if (state is FitnessDataLoaded) {
               return ProfileBmiLoadedView(fitnessData: state.fitnessData);
+            } else if (state is FitnessDataError) {
+              return Center(
+                child: Text(state.message),
+              );
             }
 
-            return Center(
-              child: state is FitnessDataLoading
-                  ? const CircularProgressIndicator()
-                  : const Text('Loading Profile Data...'),
-            );
+            return const Center(child: CircularProgressIndicator());
           },
         ),
       ),

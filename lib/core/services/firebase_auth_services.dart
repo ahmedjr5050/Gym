@@ -8,9 +8,21 @@ import 'package:fitflow/core/errors/exception.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseAuthService {
+
   Future deleteUser() async {
     await FirebaseAuth.instance.currentUser!.delete();
   }
+Future<void> logout() async {
+  try {
+    await FirebaseAuth.instance.signOut();
+    log('User logged out successfully');
+  } catch (e) {
+    log('Exception in FirebaseAuthService.logout: ${e.toString()}');
+    throw CustomException(
+      message: 'فشل تسجيل الخروج، يرجى المحاولة مرة أخرى.',
+    );
+  }
+}
 
   Future<User> createUserWithEmailAndPassword(
       {required String email, required String password}) async {

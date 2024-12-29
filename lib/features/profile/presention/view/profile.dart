@@ -1,45 +1,78 @@
+import 'package:fitflow/core/services/getit_services.dart';
 import 'package:fitflow/core/utils/app_images.dart';
+import 'package:fitflow/core/utils/app_text_style.dart';
+import 'package:fitflow/features/auth/data/repos/auth_repo_imp.dart';
+import 'package:fitflow/features/auth/presention/cubits/sign_in_cubit/sign_in_cubit.dart';
+import 'package:fitflow/features/auth/presention/sigin_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
+  static const routeName = '/profile-screen';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Align(
-        alignment: Alignment.center,
-        child: Column(
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            CustomListview(
-              imageyurl: Assets.imagesProfileblue,
-              text: 'User Profile',
-            ),
-            SizedBox(
-              height: 12,
-            ),
-            CustomListview(
-              imageyurl: Assets.imagesNotificationblue,
-              text: 'Notifications',
-            ),
-            SizedBox(
-              height: 12,
-            ),
-            CustomListview(
-              imageyurl: Assets.imagesContactblue,
-              text: 'Contact Us',
-            ),
-            SizedBox(
-              height: 12,
-            ),
-            CustomListview(
-              imageyurl: Assets.imagesInternetblue,
-              text: 'Our website',
-            ),
-          ],
+    return BlocProvider(
+      create: (context) => SignInCubit(
+        getIt<AuthRepoImpl>(),
+      ),
+      child: Scaffold(
+        body: Align(
+          alignment: Alignment.center,
+          child: Column(
+            children: [
+              SizedBox(height: 20),
+              CustomListview(
+                imageyurl: Assets.imagesProfileblue,
+                text: 'User Profile',
+              ),
+              SizedBox(height: 12),
+              CustomListview(
+                imageyurl: Assets.imagesNotificationblue,
+                text: 'Notifications',
+              ),
+              SizedBox(height: 12),
+              CustomListview(
+                imageyurl: Assets.imagesContactblue,
+                text: 'Contact Us',
+              ),
+              SizedBox(height: 12),
+              CustomListview(
+                imageyurl: Assets.imagesInternetblue,
+                text: 'Our website',
+              ),
+              SizedBox(height: 12),
+              BlocBuilder<SignInCubit, SignInState>(
+                builder: (context, state) {
+                  if (state is SignInLoading) {
+                    return CircularProgressIndicator();
+                  }
+                  return ElevatedButton(
+                    onPressed: () {
+                      context.read<SignInCubit>().signOut();
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, SignInView.routeName, (route) => false);
+                    },
+                    child: Text(
+                      'Logout',
+                      style: TextStyles.bold18.copyWith(
+                        color: Color(0xFF007AFF),
+                        fontSize: 23,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      minimumSize: Size(290, 45),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:fitflow/core/utils/app_colors.dart';
 import 'package:fitflow/core/utils/app_text_style.dart';
 import 'package:fitflow/core/widgets/custom_button_widget.dart';
@@ -15,15 +17,16 @@ class CustomFormFieldProfile extends StatefulWidget {
   @override
   State<CustomFormFieldProfile> createState() => _CustomFormFieldProfileState();
 }
+
 class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
-  final _formKey = GlobalKey<FormState>(); 
+  final _formKey = GlobalKey<FormState>();
   AutovalidateMode _formAutovalidateMode = AutovalidateMode.disabled;
 
   String? gender;
-  String? hypertension; 
+  String? hypertension;
   String? diabetic;
   int? _age;
-  String? _weight;
+  int? _weight;
   double? _height;
 
   // Validators
@@ -43,8 +46,8 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
     return null;
   }
 
-  String? _validateWeight(String? value) {
-    final weight = int.tryParse(value ?? '');
+  String? _validateWeight(int? value) {
+    final weight = value;
     if (weight == null || weight < 20 || weight > 200) {
       return 'Please enter a valid weight between 20 and 200 kg.';
     }
@@ -76,8 +79,7 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
               SizedBox(height: 49.h),
               CustomTextFormField(
                 hint: 'Your Age',
-                onSaved: (value) =>
-                    _age = int.tryParse(value ?? ''), 
+                onSaved: (value) => _age = int.tryParse(value ?? ''),
                 validator: _validateAge,
                 label: 'Age     ',
                 keyboardType: TextInputType.number,
@@ -94,8 +96,7 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
               CustomTextFormField(
                 label: 'Weight ',
                 hint: 'Your Weight',
-                onSaved: (value) => _weight = value!,
-                validator: _validateWeight,
+                onSaved: (value) => _weight,
                 keyboardType: TextInputType.number,
               ),
               SizedBox(height: 30.h),
@@ -154,7 +155,7 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
                 text: 'Next',
                 onPressed: () {
                   if (_formKey.currentState?.validate() ?? false) {
-                    _formKey.currentState?.save(); 
+                    _formKey.currentState?.save();
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -168,7 +169,7 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
                         ),
                       ),
                     );
-
+                    log(_weight.toString());
                     print({
                       'gender': gender,
                       'hypertension': hypertension,

@@ -5,6 +5,7 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.2.6 <4.0.0'
 dependencies:
+  path_provider: ^2.0.11
   dio: ^5.1.1
   cloud_firestore: ^4.5.0
   dartz: ^0.10.1
@@ -40,6 +41,7 @@ flutter_launcher_icons:
 flutter:
   uses-material-design: true
   assets:
+    - assets/models/diet.json
     - assets/images/
   fonts:
     - family: 'Roboto'

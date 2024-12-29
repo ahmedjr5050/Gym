@@ -11,20 +11,35 @@ import 'package:get_it/get_it.dart';
 final getIt = GetIt.instance;
 
 void setup() {
-  getIt.registerSingleton<FirebaseAuthService>(FirebaseAuthService());
-  getIt.registerSingleton<DatabaseService>(FireStoreService());
+  // Ensure FirebaseAuthService is registered before using it in AuthRepoImpl
+  if (!getIt.isRegistered<FirebaseAuthService>()) {
+    getIt.registerSingleton<FirebaseAuthService>(FirebaseAuthService());
+  }
 
-  // Register AuthRepo and AuthRepoImpl separately if needed
-  final authRepoImpl = AuthRepoImpl(
+  // Ensure DatabaseService (Firestore) is registered
+  if (!getIt.isRegistered<DatabaseService>()) {
+    getIt.registerSingleton<DatabaseService>(FireStoreService());
+  }
+
+  // Register Dio instance
+  if (!getIt.isRegistered<Dio>()) {
+    getIt.registerSingleton<Dio>(Dio());
+  }
+
+  // Register AuthRepoImpl and its interface
+  if (!getIt.isRegistered<AuthRepoImpl>()) {
+    final authRepoImpl = AuthRepoImpl(
       firebaseAuthServices: getIt<FirebaseAuthService>(),
-      databaseService: getIt<DatabaseService>());
-  getIt.registerSingleton<AuthRepo>(authRepoImpl);
-  getIt.registerSingleton<AuthRepoImpl>(authRepoImpl);
-  getIt.registerSingleton<Dio>(Dio());
+      databaseService: getIt<DatabaseService>(),
+    );
+    getIt.registerSingleton<AuthRepoImpl>(authRepoImpl);
+    getIt.registerSingleton<AuthRepo>(authRepoImpl);
+  }
 
-  // Register the FitnessDataRepository with the required Dio instance
-  getIt.registerSingleton<FitnessDataRepository>(
-    FitnessDataRepositoryImpl(getIt<Dio>()),
-  );
-  
+  // Register FitnessDataRepository
+  if (!getIt.isRegistered<FitnessDataRepository>()) {
+    getIt.registerSingleton<FitnessDataRepository>(
+      FitnessDataRepositoryImpl(getIt<Dio>()),
+    );
+  }
 }

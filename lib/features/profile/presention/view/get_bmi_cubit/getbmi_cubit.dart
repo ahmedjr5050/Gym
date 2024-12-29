@@ -13,7 +13,7 @@ class FitnessDataCubit extends Cubit<FitnessDataState> {
     required String gender,
     required int age,
     required double height,
-    required String weight,
+    required int weight,
     required String hypertension,
     required String diabetic,
   }) async {

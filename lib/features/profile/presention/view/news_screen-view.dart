@@ -1,4 +1,5 @@
 import 'package:fitflow/core/utils/app_images.dart';
+import 'package:fitflow/features/profile/domain/models/entities.dart';
 import 'package:fitflow/features/profile/presention/view/profile.dart';
 import 'package:fitflow/features/profile/presention/view/widgets/customappbar.dart';
 import 'package:fitflow/features/profile/presention/view/widgets/news_screen_body.dart';
@@ -6,23 +7,28 @@ import 'package:fitflow/features/profile/presention/view/workout_page.dart';
 import 'package:flutter/material.dart';
 
 class NewsScreenView extends StatefulWidget {
-  const NewsScreenView({super.key});
+  const NewsScreenView({super.key, required this.fitnessData});
   static const String routeName = '/news';
-
+  final FitnessData fitnessData;
   @override
   State<NewsScreenView> createState() => _NewsScreenViewState();
 }
 
 class _NewsScreenViewState extends State<NewsScreenView> {
   int _selectedIndex = 0;
+  final List<Widget> _pages = [];
 
-  // قائمة الصفحات
-  final List<Widget> _pages = [
-    const NewsScreenViewBody(),
-    const WorkOutScreen(),
-    const NewsScreenViewBody(),
-    const ProfileScreen(),
-  ];
+  @override
+  void initState() {
+    super.initState();
+
+    // Initialize the _pages list with the correct widget references
+    _pages.add(NewsScreenViewBody(fitnessData: widget.fitnessData));
+    _pages.add(const WorkOutScreen());
+    _pages.add(const WorkOutScreen());
+    _pages.add(const ProfileScreen());
+  }
+
   final List<String> _titles = [
     'News',
     'Workout',

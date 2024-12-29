@@ -31,4 +31,28 @@ class FireStoreService implements DatabaseService {
   }) async {
     await firestore.collection(path).doc(docuementId).delete();
   }
+
+  @override
+  Future<Map<String, dynamic>?> getDataByIndex({
+    required String path,
+    required String documentId,
+    required String index,
+  }) async {
+    try {
+      final doc = await firestore.collection(path).doc(documentId).get();
+      if (doc.exists) {
+        final data = doc.data();
+        if (data != null) {
+          final details = data['details']?[index];
+          final diet = data['diet']?[index];
+          if (details != null && diet != null) {
+            return {'details': details, 'diet': diet};
+          }
+        }
+      }
+    } catch (e) {
+      print('Error fetching data: $e');
+    }
+    return null;
+  }
 }

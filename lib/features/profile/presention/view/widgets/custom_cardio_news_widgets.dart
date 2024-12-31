@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
-class CardioNewsWidget extends StatelessWidget {
+class CustomCategoryWidgets extends StatelessWidget {
   final String title;
   final String subtitle;
   final String imagePath;
-  final void  Function()? onTap;
+  final void Function()? onTap;
 
-  const CardioNewsWidget({
+  const CustomCategoryWidgets({
     super.key,
     required this.title,
     required this.subtitle,
-    required this.imagePath, this.onTap,
+    required this.imagePath,
+    this.onTap,
   });
 
   @override

@@ -24,14 +24,19 @@ class NewsScreenViewBody extends StatelessWidget {
                 },
                 child: YourPlane()),
             SizedBox(height: 15.h),
-            CardioNewsWidget(
+            CustomCategoryWidgets(
               onTap: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => CardioExercises(
-                              fitnessData: fitnessData,
-                            )));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CardioExercises(
+                      predictedDiet: fitnessData.predictedDiet.toString(),
+                      title: 'Tips and Tricks',
+                      excerciesname: 'cardio',
+                      imageassets: Assets.imagesRun,
+                    ),
+                  ),
+                );
               },
               title: '5 Tips to Improve Your Cardio  Performance',
               subtitle:
@@ -39,18 +44,48 @@ class NewsScreenViewBody extends StatelessWidget {
               imagePath: Assets.imagesRun,
             ),
             SizedBox(height: 15.h),
-            CardioNewsWidget(
-              title: 'How to Stay Motivated on Your Fitness Journey',
-              subtitle:
-                  'Discover how to increase endurance and enhance your cardio workouts with these simple tips',
-              imagePath: Assets.imagesPower,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CardioExercises(
+                      imageassets: Assets.imagesPower,
+                      predictedDiet: '1',
+                      title: 'Tips and Tricks',
+                      excerciesname: 'exercises',
+                    ),
+                  ),
+                );
+              },
+              child: CustomCategoryWidgets(
+                title: 'How to Stay Motivated on Your Fitness Journey',
+                subtitle:
+                    'Discover how to increase endurance and enhance your cardio workouts with these simple tips',
+                imagePath: Assets.imagesPower,
+              ),
             ),
             SizedBox(height: 15.h),
-            CardioNewsWidget(
-              title: 'The Best Post-Workout Meals for Muscle',
-              subtitle:
-                  'The Best Post-Workout Meals for Muscle Recovery Check out these nutritious meal ideas!',
-              imagePath: Assets.imagesFood,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CardioExercises(
+                      imageassets: Assets.imagesFood,
+                      predictedDiet: fitnessData.predictedDiet.toString(),
+                      title: 'Tips and Tricks',
+                      excerciesname: 'diets',
+                    ),
+                  ),
+                );
+              },
+              child: CustomCategoryWidgets(
+                title: 'The Best Post-Workout Meals for Muscle',
+                subtitle:
+                    'The Best Post-Workout Meals for Muscle Recovery Check out these nutritious meal ideas!',
+                imagePath: Assets.imagesFood,
+              ),
             ),
           ],
         ),

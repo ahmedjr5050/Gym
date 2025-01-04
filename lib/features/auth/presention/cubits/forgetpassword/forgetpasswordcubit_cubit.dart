@@ -13,13 +13,16 @@ class ForgetpasswordCubit extends Cubit<ForgetpasswordcubitState> {
     emit(ForgetpasswordcubitLoading());
     try {
       await authRepo.resetPassword(email);
-      emit(ForgetpasswordcubitSuccess(message: 'Password reset link sent to your email.'));
+      emit(ForgetpasswordcubitSuccess(
+          message: 'Password reset link sent to your email.'));
     } catch (e) {
       String errorMessage;
       if (e is CustomException) {
-        errorMessage = 'Network error, please check your connection and try again.';
+        errorMessage =
+            'Network error, please check your connection and try again.';
       } else if (e is ForgetpasswordcubitError) {
-        errorMessage = 'Email could not be sent, please check your email configuration.';
+        errorMessage =
+            'Email could not be sent, please check your email configuration.';
       } else {
         errorMessage = 'An error occurred. Please try again.';
       }

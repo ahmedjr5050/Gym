@@ -103,6 +103,8 @@ class AuthRepoImpl extends AuthRepo {
   Future<Either<Failure, void>> resetPassword(String email) async {
     try {
       await firebaseAuthServices.resetPassword(email);
+      log('Password reset link sent to your email');
+      log(email);
     } catch (e) {
       log('Exception in AuthRepoImpl resetPassword: $e');
       String errorMessage;
@@ -115,12 +117,6 @@ class AuthRepoImpl extends AuthRepo {
     }
     return right(null);
   }
-
-  // Future<UserEntity> getUserData({required String uid}) async {
-  //   var userData = await databaseService.getData(
-  //       path: BackendEndpoint.getUsersData, docuementId: uid);
-  //   return UserModel.fromJson(userData);
-  // }
 
   @override
   Future<void> logout() async {

@@ -13,8 +13,7 @@ import 'package:flutter/material.dart';
 
 Route<dynamic> onGenerateRoutes(RouteSettings settings) {
   switch (settings.name) {
-    // case NewsScreenView.routeName:
-    //   return MaterialPageRoute(builder: (_) => const NewsScreenView());
+
     case SplashView.routeName:
       return MaterialPageRoute(builder: (_) => const SplashView());
     case SignInView.routeName:

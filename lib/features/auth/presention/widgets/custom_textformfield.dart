@@ -11,6 +11,7 @@ class CustomTextFieldWithLabel extends StatefulWidget {
   final bool isPasswordField;
 final TextInputType? keyboardType;
   final void Function(String?)? onSaved;
+  final void Function(String?)? onChanged;
 
   const CustomTextFieldWithLabel({
     Key? key,
@@ -21,7 +22,7 @@ final TextInputType? keyboardType;
     this.suffixIcon,
     this.controller,
     this.padding = const EdgeInsets.all(13.0),
-    this.isPasswordField = false, this.keyboardType, this.onSaved,
+    this.isPasswordField = false, this.keyboardType, this.onSaved, this.onChanged,
   }) : super(key: key);
 
   @override
@@ -56,6 +57,7 @@ class _CustomTextFieldWithLabelState extends State<CustomTextFieldWithLabel> {
       },
             keyboardType: widget.keyboardType,
             onSaved: widget.onSaved,
+            onChanged: widget.onChanged,
             controller: widget.controller,
             obscureText: widget.isPasswordField && !_isPasswordVisible,
             decoration: InputDecoration(

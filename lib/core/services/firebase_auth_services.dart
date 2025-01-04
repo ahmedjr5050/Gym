@@ -8,21 +8,21 @@ import 'package:fitflow/core/errors/exception.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseAuthService {
-
   Future deleteUser() async {
     await FirebaseAuth.instance.currentUser!.delete();
   }
-Future<void> logout() async {
-  try {
-    await FirebaseAuth.instance.signOut();
-    log('User logged out successfully');
-  } catch (e) {
-    log('Exception in FirebaseAuthService.logout: ${e.toString()}');
-    throw CustomException(
-      message: 'فشل تسجيل الخروج، يرجى المحاولة مرة أخرى.',
-    );
+
+  Future<void> logout() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      log('User logged out successfully');
+    } catch (e) {
+      log('Exception in FirebaseAuthService.logout: ${e.toString()}');
+      throw CustomException(
+        message: 'فشل تسجيل الخروج، يرجى المحاولة مرة أخرى.',
+      );
+    }
   }
-}
 
   Future<User> createUserWithEmailAndPassword(
       {required String email, required String password}) async {
@@ -95,6 +95,7 @@ Future<void> logout() async {
     );
     return (await FirebaseAuth.instance.signInWithCredential(credential)).user!;
   }
+
   String generateNonce([int length = 32]) {
     const charset =
         '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._';
@@ -113,18 +114,19 @@ Future<void> logout() async {
   bool isLoggedIn() {
     return FirebaseAuth.instance.currentUser != null;
   }
+
   Future<void> resetPassword(String email) async {
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
     } on FirebaseAuthException catch (e) {
-      log("Exception in FirebaseAuthService.resetPassword: ${e.toString()} and code is ${e.code}");
+      log("FirebaseAuthException in resetPassword: ${e.toString()}, Code: ${e.code}");
       throw CustomException(
-        message: 'حدث خطأ ما يرجى المحاولة مرة أخرى.',
+        message: 'حدث خطأ ما، يرجى المحاولة مرة أخرى.',
       );
     } catch (e) {
-      log("Exception in FirebaseAuthService.resetPassword: ${e.toString()}");
+      log("Unexpected exception in resetPassword: ${e.toString()}");
       throw CustomException(
-        message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
+        message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة أخرى.',
       );
     }
   }

@@ -7,9 +7,9 @@ import 'package:fitflow/features/profile/presention/view/workout_page.dart';
 import 'package:flutter/material.dart';
 
 class NewsScreenView extends StatefulWidget {
-  const NewsScreenView({super.key, required this.fitnessData});
+  const NewsScreenView({super.key, this.fitnessData});
   static const String routeName = '/news';
-  final FitnessData fitnessData;
+  final FitnessData? fitnessData;
   @override
   State<NewsScreenView> createState() => _NewsScreenViewState();
 }
@@ -23,7 +23,7 @@ class _NewsScreenViewState extends State<NewsScreenView> {
     super.initState();
 
     // Initialize the _pages list with the correct widget references
-    _pages.add(NewsScreenViewBody(fitnessData: widget.fitnessData));
+    _pages.add(NewsScreenViewBody(fitnessData: widget.fitnessData!));
     _pages.add(const WorkOutScreen());
     _pages.add(const WorkOutScreen());
     _pages.add(const ProfileScreen());

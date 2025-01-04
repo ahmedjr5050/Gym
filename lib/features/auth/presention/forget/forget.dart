@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:fitflow/core/helper/build_error_bar.dart';
 import 'package:fitflow/core/services/getit_services.dart';
 import 'package:fitflow/core/utils/app_colors.dart';
@@ -17,7 +19,7 @@ class ForgetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String _email = '';  // Initialize _email
+    String _email = ''; // Initialize _email
 
     return BlocProvider(
       create: (context) => ForgetpasswordCubit(
@@ -32,9 +34,11 @@ class ForgetPassword extends StatelessWidget {
           if (state is ForgetpasswordcubitError) {
             String errorMessage = state.error;
             if (state.error.contains('channel-error')) {
-              errorMessage = 'Network error, please check your connection and try again.';
+              errorMessage =
+                  'Network error, please check your connection and try again.';
             } else if (state.error.contains('email')) {
-              errorMessage = 'Email could not be sent, please check your email configuration.';
+              errorMessage =
+                  'Email could not be sent, please check your email configuration.';
             }
             showBar(context, errorMessage);
           }
@@ -67,8 +71,9 @@ class ForgetPassword extends StatelessWidget {
                             ),
                           ),
                           CustomTextFieldWithLabel(
-                            onSaved: (value) {
-                              _email = value ?? '';  // Initialize _email with saved value
+                            onChanged: (value) {
+                              _email = value ?? '';
+                              log('Updated _email: $_email');
                             },
                             keyboardType: TextInputType.emailAddress,
                             label: 'Enter Your Email',
@@ -77,11 +82,13 @@ class ForgetPassword extends StatelessWidget {
                             hintStyle: TextStyles.light16,
                           ),
                           state is ForgetpasswordcubitLoading
-                              ? CircularProgressIndicator()  // Show loading indicator if state is loading
+                              ? CircularProgressIndicator() // Show loading indicator if state is loading
                               : CustomButtonWidget(
                                   text: 'Send',
                                   onPressed: () {
-                                    context.read<ForgetpasswordCubit>().resetPassword(
+                                    context
+                                        .read<ForgetpasswordCubit>()
+                                        .resetPassword(
                                           _email,
                                         );
                                   },

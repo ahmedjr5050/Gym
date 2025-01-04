@@ -6,6 +6,7 @@ import 'package:fitflow/features/auth/presention/cubits/sign_in_cubit/sign_in_cu
 import 'package:fitflow/features/auth/presention/forget/forget.dart';
 import 'package:fitflow/features/auth/presention/signup_view.dart';
 import 'package:fitflow/features/auth/presention/widgets/custom_textformfield.dart';
+import 'package:fitflow/features/profile/presention/view/news_screen-view.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -98,7 +99,8 @@ class SigninViewBody extends StatelessWidget {
                         onTap: () {
                           print('google');
                           context.read<SignInCubit>().signInWithGoogle();
-                          // Navigator.pushNamed(context, NewsScreenView.routeName);
+                          //HERE IWANT WHEN SUCESS NAVIGATIE TO THE NEWS SCREEN
+                         
                         },
                         titleStyle: TextStyles.bold18.copyWith(
                           color: Colors.white,

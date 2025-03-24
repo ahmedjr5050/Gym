@@ -43,6 +43,7 @@ class FirebaseAuthService {
       } else if (e.code == 'network-request-failed') {
         throw CustomException(message: 'تاكد من اتصالك بالانترنت.');
       } else {
+        log(e.message ?? 'ahmed');
         throw CustomException(
             message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.');
       }

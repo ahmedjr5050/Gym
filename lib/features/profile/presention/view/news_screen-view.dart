@@ -24,15 +24,14 @@ class _NewsScreenViewState extends State<NewsScreenView> {
 
     // Initialize the _pages list with the correct widget references
     _pages.add(NewsScreenViewBody(fitnessData: widget.fitnessData!));
-    _pages.add(const WorkOutScreen());
-    _pages.add(const WorkOutScreen());
+    _pages.add(WorkOutScreen(fitnessData: widget.fitnessData!));
+
     _pages.add(const ProfileScreen());
   }
 
   final List<String> _titles = [
     'News',
     'Workout',
-    'Diet',
     'Profile',
   ];
 
@@ -54,10 +53,6 @@ class _NewsScreenViewState extends State<NewsScreenView> {
           BottomNavigationBarItem(
             icon: Image.asset(Assets.imagesWorkout),
             label: 'workout',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(Assets.imagesDiet),
-            label: 'diet',
           ),
           BottomNavigationBarItem(
             icon: Image.asset(Assets.imagesProfile),

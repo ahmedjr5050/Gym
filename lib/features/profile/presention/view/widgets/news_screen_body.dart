@@ -51,7 +51,7 @@ class NewsScreenViewBody extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => CardioExercises(
                       imageassets: Assets.imagesPower,
-                      predictedDiet: '1',
+                      predictedDiet: fitnessData.predictedDiet.toString(),
                       title: 'Tips and Tricks',
                       excerciesname: 'exercises',
                     ),

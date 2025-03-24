@@ -17,7 +17,7 @@ class CardioExercises extends StatelessWidget {
 
   final String title; 
   final String predictedDiet; 
-  final String excerciesname;   
+  final String excerciesname;
   final String imageassets;
 
   @override

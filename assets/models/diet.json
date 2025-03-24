@@ -31,32 +31,73 @@
         "juices": ["Apple juice", "beetroot juice", "mango juice"]
       },
       "6": {
-        "vegetables": ["Garlic", "Mushroom", "Green Papper", "Water Chestnut"],
+        "vegetables": ["Garlic", "Mushroom", "Green Pepper", "Water Chestnut"],
         "protein_intake": ["Baru Nuts", "Beech Nuts", "Black Walnut"],
-        "juices": ["Apple juice", "Mango", "Beetroot Juice"]
+        "juices": ["Apple juice", "Mango", "Beetroot juice"]
       },
       "7": {
-        "vegetables": ["Garlic", "Mushroom", "Green Papper"],
+        "vegetables": ["Garlic", "Mushroom", "Green Pepper"],
         "protein_intake": ["Baru Nuts", "Beech Nuts", "Hemp Seeds"],
         "juices": ["Apple juice", "Mango", "Beetroot Juice"]
       },
       "8": {
-        "vegetables": ["Mixed greens", "cherry tomatoes", "cucumbers", "bell peppers", "carrots", "celery"],
-        "protein_intake": ["Chicken", "fish", "tofu", "legumes"],
+        "vegetables": ["Mixed greens", "Cherry Tomatoes", "cucumbers", "bell peppers", "carrots", "celery"],
+        "protein_intake": ["Chicken", "Fish", "tofu", "legumes"],
         "juices": ["Green juice", "kale", "spinach", "cucumber", "celery", "apple"]
       },
       "9": {
         "vegetables": ["Tomatoes", "Garlic", "leafy greens", "broccoli", "carrots", "bell peppers"],
         "protein_intake": ["Poultry", "fish", "tofu", "legumes", "low-fat dairy products"],
         "juices": ["Apple juice", "beetroot juice", "mango juice"]
-      }
+    }
     },
     "exercises": {
-      "0": "Brisk walking, cycling, swimming, running, or dancing.",
-      "1": "Squats, deadlifts, bench presses, and overhead presses.",
-      "2": "Squats, yoga, deadlifts, bench presses, and overhead presses.",
-      "3": "Walking, Yoga, Swimming.",
-      "4": "Brisk walking, cycling, swimming, or dancing."
+      "0": {
+        "الاثنين": "Brisk walking (30-45 دقيقة)",
+        "الثلاثاء": "Cycling (30 دقيقة)",
+        "الأربعاء": "Swimming (30 دقيقة)",
+        "الخميس": "Running (20-30 دقيقة)",
+        "الجمعة": "Dancing (30 دقيقة)",
+        "السبت": "Brisk walking (30-45 دقيقة)",
+        "الأحد": "Rest or light stretching"
+    },
+    "1": {
+        "الاثنين": "Squats (4 مجموعات × 12 تكرارات)",
+        "الثلاثاء": "Deadlifts (4 مجموعات × 10 تكرارات)",
+        "الأربعاء": "Bench presses (4 مجموعات × 8 تكرارات)",
+        "الخميس": "Overhead presses (4 مجموعات × 8 تكرارات)",
+        "الجمعة": "Squats (3 مجموعات × 15 تكرارات)",
+        "السبت": "Deadlifts (3 مجموعات × 12 تكرارات)",
+        "الأحد": "Rest or active recovery"
+    },
+    "2": {
+        "الاثنين": "Squats (4 مجموعات × 12 تكرارات)",
+        "الثلاثاء": "Yoga (جلسة لمدة 30 دقيقة)",
+        "الأربعاء": "Deadlifts (4 مجموعات × 10 تكرارات)",
+        "الخميس": "Bench presses (4 مجموعات × 8 تكرارات)",
+        "الجمعة": "Overhead presses (4 مجموعات × 8 تكرارات)",
+        "السبت": "Yoga (جلسة استرخاء لمدة 20 دقيقة)",
+        "الأحد": "Rest"
+    },
+    "3": {
+        "الاثنين": "Walking (45 دقيقة)",
+        "الثلاثاء": "Yoga (جلسة لمدة 30 دقيقة)",
+        "الأربعاء": "Swimming (30 دقيقة)",
+        "الخميس": "Walking (60 دقيقة)",
+        "الجمعة": "Yoga (جلسة استرخاء لمدة 20 دقيقة)",
+        "السبت": "Swimming (30 دقيقة)",
+        "الأحد": "Rest"
+    },
+    "4": {
+        "الاثنين": "Brisk walking (30-45 دقيقة)",
+        "الثلاثاء": "Cycling (30 دقيقة)",
+        "الأربعاء": "Swimming (30 دقيقة)",
+        "الخميس": "Dancing (30 دقيقة)",
+        "الجمعة": "Brisk walking (30-45 دقيقة)",
+        "السبت": "Cycling (30 دقيقة)",
+        "الأحد": "Rest"
+  
+    }
     },
     "cardio": {
       "0": [
@@ -129,6 +170,49 @@
         "Swimming in open water for 15-20 minutes",
         "Dance cardio session for 20 minutes"
       ]
-    }
-  }
-  
+    },
+    "weekly_diet": {
+      "0": {
+        "day": "Monday",
+        "vegetables": ["Broccoli", "Carrots", "Spinach", "Lettuce", "Onion"],
+        "protein_intake": ["Cheese", "Cottage cheese", "Skim Milk", "Low-fat Milk", "Baru Nuts"],
+        "juice": ["Fruit Juice", "Aloe vera juice", "Cold-pressed juice", "Watermelon juice"]
+      },
+      "1": {
+        "day": "Tuesday",
+        "vegetables": ["Carrots", "Sweet Potato", "Lettuce"],
+        "protein_intake": ["Red meats", "Poultry", "Fish", "Eggs", "Dairy products", "Legumes", "Nuts"],
+        "juice": ["Fruit juice", "Watermelon juice", "Carrot juice", "Apple juice", "Mango juice"]
+      },
+      "2": {
+        "day": "Wednesday",
+        "vegetables": ["Carrots", "Sweet Potato", "Lettuce"],
+        "protein_intake": ["Red meats", "Poultry", "Fish", "Eggs", "Dairy products", "Legumes", "Nuts"],
+        "juice": ["Fruit juice", "Watermelon juice", "Carrot juice", "Apple juice", "Mango juice"]
+      },
+      "3": {
+        "day": "Thursday",
+        "vegetables": ["Garlic", "Mushroom", "Green Pepper", "Iceberg Lettuce"],
+        "protein_intake": ["Baru Nuts", "Beech Nuts", "Hemp Seeds", "Cheese Sandwich"],
+        "juice": ["Apple Juice", "Mango juice", "Beetroot juice"]
+      },
+      "4": {
+        "day": "Friday",
+        "vegetables": ["Garlic", "Roma Tomatoes", "Capers", "Iceberg Lettuce"],
+        "protein_intake": ["Cheese Sandwich", "Baru Nuts", "Beech Nuts", "Squash Seeds", "Mixed Teff"],
+        "juice": ["Apple juice", "Beetroot juice", "Mango juice"]
+      },
+      "5": {
+        "day": "Saturday",
+        "vegetables": ["Garlic", "Roma Tomatoes", "Capers", "Green Pepper", "Iceberg Lettuce"],
+        "protein_intake": ["Cheese Sandwich", "Baru Nuts", "Beech Nuts", "Squash Seeds", "Mixed Teff", "Peanut Butter", "Jelly Sandwich"],
+        "juice": ["Apple juice", "Beetroot juice", "Mango juice"]
+      },
+      "6": {
+        "day": "Sunday",
+        "vegetables": ["Garlic", "Mushroom", "Green Pepper", "Water Chestnut"],
+        "protein_intake": ["Baru Nuts", "Beech Nuts", "Black Walnut"],
+        "juice": ["Apple juice", "Mango juice", "Beetroot juice"]
+      }
+      }
+}

@@ -40,27 +40,38 @@ class ProfileBmiLoadedView extends StatelessWidget {
                     TextSpan(
                       children: [
                         TextSpan(
-                          text: 'Your Bmi Is ',
+                          text: '            Your Bmi Is  ',
                           style: TextStyles.bold18,
                         ),
                         TextSpan(
-                          text: '${fitnessData.bmi} ',
+                          text: '${fitnessData.bmi}\n \n',
                           style: TextStyles.bold18.copyWith(
                             fontSize: 24,
+                            color: Colors.blue,
                           ),
                         ),
                         TextSpan(
-                          text: 'and This Is\n \n',
+                          text: '    Predicted Goal is ',
                           style: TextStyles.bold18,
                         ),
                         TextSpan(
-                          text: '             very Good',
+                          text: '${fitnessData.predictedGoal}\n \n',
+                          style: TextStyles.bold18.copyWith(color: Colors.blue),
+                        ),
+                        TextSpan(
+                          text: 'Predicted Type  ',
                           style: TextStyles.bold18,
+                        ),
+                        TextSpan(
+                          text: '${fitnessData.predictedType}',
+                          style: TextStyles.bold18.copyWith(
+                            color: Colors.blue,
+                          ),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 30.h),
+                  SizedBox(height: 5.h),
                   CustomButtonWidget(
                     text: 'Start',
                     textStyle: TextStyles.bold18.copyWith(color: Colors.white),

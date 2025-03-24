@@ -33,6 +33,7 @@ class _SignInBlocConsumerState extends State<SignInBlocConsumer> {
               (route) => false);
         }
         if (state is SignInError) {
+          
           showBar(context, state.message);
         }
       },

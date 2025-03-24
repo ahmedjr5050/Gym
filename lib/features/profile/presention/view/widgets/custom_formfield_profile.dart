@@ -96,7 +96,9 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
               CustomTextFormField(
                 label: 'Weight ',
                 hint: 'Your Weight',
-                onSaved: (value) => _weight,
+                onSaved: (value) => _weight = int.tryParse(value ?? ''),
+                validator: (value) =>
+                    _validateWeight(int.tryParse(value ?? '')),
                 keyboardType: TextInputType.number,
               ),
               SizedBox(height: 30.h),
@@ -156,6 +158,9 @@ class _CustomFormFieldProfileState extends State<CustomFormFieldProfile> {
                 onPressed: () {
                   if (_formKey.currentState?.validate() ?? false) {
                     _formKey.currentState?.save();
+                    log(
+                      'gender: $gender, hypertension: $hypertension, diabetic: $diabetic, age: $_age, weight: $_weight, height: $_height',
+                    );
                     Navigator.push(
                       context,
                       MaterialPageRoute(

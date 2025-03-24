@@ -29,6 +29,9 @@ class FitnessDataCubit extends Cubit<FitnessDataState> {
         hypertension: hypertension,
       );
       emit(FitnessDataLoaded(fitnessData));
+      log(
+        'Fitness data loaded successfully: ${fitnessData.predictedGoal.toString()}',
+      );
     } catch (e) {
       emit(FitnessDataError('Failed to load fitness data: $e'));
       log(e.toString());

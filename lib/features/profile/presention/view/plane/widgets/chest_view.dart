@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ChestView extends StatelessWidget {
-  final String imagePath;
+  final List<String> imagePath;
   final String exerciseName;
   final String reps;
   final String muscleTargeted;
@@ -38,7 +38,19 @@ class ChestView extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Image.asset(imagePath),
+              child: PageView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: imagePath.length,
+                itemBuilder: (context, index) {
+                  return ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      imagePath[index],
+                      fit: BoxFit.cover,
+                    ),
+                  );
+                },
+              ),
             ),
           ),
           Row(

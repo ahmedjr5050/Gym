@@ -17,8 +17,7 @@ class FitnessDataRepositoryImpl implements FitnessDataRepository {
     required String hypertension,
     required String diabetic,
   }) async {
-    const url =
-        'http://10.0.2.2:8000/predict/'; // worker
+    const url = 'http://10.0.2.2:8000/predict/'; // worker
 // http://192.168.1.23:8000/predict/
     try {
       // Constructing the request payload

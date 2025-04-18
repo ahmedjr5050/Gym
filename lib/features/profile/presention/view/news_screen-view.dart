@@ -1,10 +1,13 @@
+import 'dart:developer';
+
 import 'package:fitflow/core/utils/app_images.dart';
-import 'package:fitflow/features/profile/domain/models/entities.dart';
+// import 'package:fitflow/features/profile/domain/models/entities.dart';
 import 'package:fitflow/features/profile/presention/view/profile.dart';
 import 'package:fitflow/features/profile/presention/view/widgets/customappbar.dart';
 import 'package:fitflow/features/profile/presention/view/widgets/news_screen_body.dart';
 import 'package:fitflow/features/profile/presention/view/workout_page.dart';
 import 'package:flutter/material.dart';
+import 'package:fitflow/features/profile/domain/models/entities.dart';
 
 class NewsScreenView extends StatefulWidget {
   const NewsScreenView({super.key, this.fitnessData});
@@ -20,6 +23,7 @@ class _NewsScreenViewState extends State<NewsScreenView> {
 
   @override
   void initState() {
+    log(' ${widget.fitnessData!.predictedExercise}');
     super.initState();
 
     // Initialize the _pages list with the correct widget references
@@ -27,12 +31,16 @@ class _NewsScreenViewState extends State<NewsScreenView> {
     _pages.add(WorkOutScreen(fitnessData: widget.fitnessData!));
 
     _pages.add(const ProfileScreen());
+    // _pages.add(SchdualWorkoutScreen(
+    //   index: widget.fitnessData!.predictedExercise,
+    // ));
   }
 
   final List<String> _titles = [
     'News',
     'Workout',
     'Profile',
+    // 'Gym Schedule',
   ];
 
   void _onItemTapped(int index) {
@@ -58,6 +66,10 @@ class _NewsScreenViewState extends State<NewsScreenView> {
             icon: Image.asset(Assets.imagesProfile),
             label: 'profile',
           ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.calendar_today),
+          //   label: 'gym schedule',
+          // ),
         ],
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.blue,

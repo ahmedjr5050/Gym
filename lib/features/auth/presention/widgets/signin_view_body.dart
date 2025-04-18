@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:fitflow/core/utils/app_colors.dart';
 import 'package:fitflow/core/utils/app_images.dart';
 import 'package:fitflow/core/utils/app_text_style.dart';
@@ -100,7 +102,6 @@ class SigninViewBody extends StatelessWidget {
                           print('google');
                           context.read<SignInCubit>().signInWithGoogle();
                           //HERE IWANT WHEN SUCESS NAVIGATIE TO THE NEWS SCREEN
-                         
                         },
                         titleStyle: TextStyles.bold18.copyWith(
                           color: Colors.white,
@@ -154,7 +155,7 @@ class _CustomButtonSignInState extends State<CustomButtonSignIn> {
           onPressed: () {
             if (_formKey.currentState!.validate()) {
               _formKey.currentState!.save();
-
+              log("email: $_email, password: $_password");
               context
                   .read<SignInCubit>()
                   .signInWithEmailAndPassword(_email, _password);

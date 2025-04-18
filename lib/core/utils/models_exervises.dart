@@ -5,7 +5,10 @@ final List<Exercise> exercises = [
     day: 'Day 1',
     exerciseName: 'Chest',
     isLocked: false,
-    imagePath: Assets.imagesChest,
+    imagePath: [
+      Assets.imagesChest,
+      'assets/images/chest_2.jpg',
+    ],
     reps: '3 X 10',
     muscleTargeted: 'Chest',
   ),
@@ -13,7 +16,10 @@ final List<Exercise> exercises = [
     day: 'Day 2',
     exerciseName: 'Back',
     isLocked: false,
-    imagePath: 'assets/images/back.png',
+    imagePath: [
+      Assets.imagesChest,
+      Assets.imagesChest,
+    ],
     reps: '4 X 12',
     muscleTargeted: 'Back',
   ),
@@ -21,7 +27,10 @@ final List<Exercise> exercises = [
     day: 'Day 3',
     exerciseName: 'Legs',
     isLocked: true,
-    imagePath: 'assets/images/legs.png',
+    imagePath:[
+      Assets.imagesChest,
+
+    ],
     reps: '4 X 15',
     muscleTargeted: 'Legs',
   ),
@@ -29,7 +38,10 @@ final List<Exercise> exercises = [
     day: 'Day 4',
     exerciseName: 'Arms',
     isLocked: true,
-    imagePath: 'assets/images/arms.png',
+    imagePath: [
+      Assets.imagesChest,
+
+    ],
     reps: '3 X 12',
     muscleTargeted: 'Arms',
   ),
@@ -37,7 +49,10 @@ final List<Exercise> exercises = [
     day: 'Day 5',
     exerciseName: 'Shoulders',
     isLocked: true,
-    imagePath: 'assets/images/shoulders.png',
+    imagePath: [
+      Assets.imagesChest,
+
+    ],
     reps: '3 X 10',
     muscleTargeted: 'Shoulders',
   ),
@@ -47,7 +62,7 @@ class Exercise {
   final String day;
   final String exerciseName;
   final bool isLocked;
-  final String imagePath;
+  final List<String> imagePath;
   final String reps;
   final String muscleTargeted;
 

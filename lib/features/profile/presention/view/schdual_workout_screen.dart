@@ -1,3 +1,6 @@
+import 'dart:developer';
+import 'dart:math';
+
 import 'package:fitflow/core/utils/app_images.dart';
 import 'package:fitflow/core/utils/app_text_style.dart';
 import 'package:fitflow/features/profile/presention/view/widgets/customappbar.dart';
@@ -45,10 +48,15 @@ class _SchdualWorkoutScreenState extends State<SchdualWorkoutScreen> {
         body: Center(child: CircularProgressIndicator()),
       );
     }
-
-    // استخرج البيانات بناءً على الـ index
-    final exercises = Map<String, dynamic>.from(
-        scheduleData!['exercises'][widget.index.toString()]);
+    final randomIndex = Random().nextInt(5); // من 0 إلى 5
+    final exercisesData = scheduleData!['exercises'][randomIndex.toString()];
+    if (exercisesData == null || exercisesData is! Map<String, dynamic>) {
+      return Scaffold(
+        appBar: AppBar(title: Text('الجدول الأسبوعي')),
+        body: Center(child: Text('لا توجد بيانات للتمارين لهذا اليوم')),
+      );
+    }
+    final Map<String, dynamic> exercises = exercisesData;
     final List<dynamic> cardio =
         scheduleData!['cardio'][widget.index.toString()];
 

@@ -63,6 +63,7 @@ class _DietWorkoutState extends State<DietWorkout> {
         titleText: 'الجدول الأسبوعي',
       ),
       body: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
         padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,7 +90,8 @@ class _DietWorkoutState extends State<DietWorkout> {
                     DataCell(Text(dayData['day']?.toString() ?? 'غير محدد')),
                     DataCell(Text(
                         (dayData['vegetables'] as List<dynamic>?)?.join(', ') ??
-                            'لا توجد بيانات')),
+                            'لا توجد بيانات',
+                        style: TextStyle(fontSize: 16))),
                     DataCell(Text((dayData['protein_intake'] as List<dynamic>?)
                             ?.join(', ') ??
                         'لا توجد بيانات')),
